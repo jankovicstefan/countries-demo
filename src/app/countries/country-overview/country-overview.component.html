@@ -1,0 +1,16 @@
+<div class="container" [routerLink]="['/details', countryName]" [state]="country">
+  <div class="country-overview__items">
+    <div class="country-overview__item flag">
+      <img [src]=country.flags.png>
+    </div>
+    <div class="country-overview__item overview">
+      <div class="overview-text">
+        <h3>{{countryName}}</h3>
+
+        <h6><b>Population:</b> {{country.population | number}}</h6>
+        <h6><b>Region:</b> {{country.region}}</h6>
+        <h6><b>Capital:</b> {{country.capital}}</h6>
+      </div>
+    </div>
+  </div>
+</div>

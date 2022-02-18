@@ -1,0 +1,6 @@
+<app-filter></app-filter>
+<div class="grid-container">
+  <div class="grid-container__item" *ngFor="let country of countries">
+    <app-country-overview [country]="country"></app-country-overview>
+  </div>
+</div>

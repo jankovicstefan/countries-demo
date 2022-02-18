@@ -1,0 +1,44 @@
+<div class="details-container" *ngIf="country" >
+  <div class="details-containter__item">
+    <ion-icon class="icon" name="arrow-back-outline"></ion-icon>
+    <a class="button back-button" [routerLink]="['/']">Back</a>
+  </div>
+  <div class="details-containter__item country-details">
+    <div class="details-containter__items flag">
+      <img [src]="country?.flags.png">
+    </div>
+    <div class="details-containter__items info-container">
+      <div class="item-info">
+        <h3>{{country.name.common}}</h3>
+      </div>
+      <div class="item-info">
+        <div class="item-info__col">
+          <h6><b>Native Name:</b> {{nativeName.common}} </h6>
+          <h6><b>Region:</b> {{country.region}}</h6>
+          <h6><b>Population:</b> {{country.population | number}}</h6>
+          <h6><b>Sub Region:</b> {{country.subregion}}</h6>
+          <h6><b>Capital:</b> {{capital}}</h6>
+        </div>
+        <div class="item-info__col">
+          <h6><b>Top Level Domein:</b> {{tld}} </h6>
+          <h6><b>Curencies:</b> {{curencies}}</h6>
+          <h6><b>Languages:</b> {{languages}}</h6>
+        </div>
+      </div>
+      <div class="item-info">
+        <a class="button" (click)="openOnMap()">View on Map</a>
+      </div>
+      <div class="item-info" *ngIf="borderCountries?.length > 0">
+        <div class="borders-info borders">
+          <h6><b>Border Countries:</b></h6>
+        </div>
+        <div class="borders-info borders-buttons">
+          <button class="button borders-button" *ngFor="let borderCountry of borderCountries"
+          (click)="reload(borderCountry.name.common)">
+            {{borderCountry.name.common}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

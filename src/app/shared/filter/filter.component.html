@@ -1,0 +1,16 @@
+<form [formGroup]="filterForm">
+  <div class="filter-container">
+    <div class="filter-container__items">
+      <div class="filter-conainer__item search-field">
+        <ion-icon class="icon" name="search-outline"></ion-icon>
+        <input formControlName="search" (keyup)="filterChanged()" type="text" placeholder="Search for a country...">
+      </div>
+      <div class="filter-conainer__item select-field">
+        <select formControlName="select" (change)="filterChanged()">
+          <option value="All" disabled selected hidden>Filter by Region</option>
+          <option *ngFor="let region of regionFilterValues" [value]="region">{{region}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</form>

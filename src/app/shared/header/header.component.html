@@ -1,0 +1,14 @@
+<header>
+  <div class="title">
+    <a [routerLink]="'/'">Where in the world?</a>
+  </div>
+  <div class="toggle-button" (click)="toggleTheme()">
+    <div class="toggle-button__item theme-icon">
+      <ion-icon name="moon" *ngIf="selectedTheme === 'dark'"></ion-icon>
+      <ion-icon name="moon-outline" *ngIf="selectedTheme === 'light'"></ion-icon>
+    </div>
+    <div class="toggle-button__item theme-mode">
+      <a>Dark Mode </a>
+    </div>
+  </div>
+</header>
